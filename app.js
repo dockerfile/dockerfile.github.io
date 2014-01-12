@@ -37,8 +37,8 @@ angular.module('app', [
             function (res) {
               return res.data;
             },
-            function (err) {
-              alert(err.message);
+            function (reason) {
+              alert(reason);
               $state.go('home');
             }
           );
@@ -54,8 +54,8 @@ angular.module('app', [
             function (res) {
               return res.data;
             },
-            function (err) {
-              alert(err.message);
+            function (reason) {
+              alert(reason);
               $state.go('home');
             }
           );
