@@ -39,6 +39,7 @@ angular.module('app', [
             },
             function (res) {
               alert(res.data.message);
+              console.error(res);
               $state.go('home');
             }
           );
@@ -56,6 +57,7 @@ angular.module('app', [
             },
             function (res) {
               alert(res.data.message);
+              console.error(res);
               $state.go('home');
             }
           );
