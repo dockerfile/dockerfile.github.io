@@ -46,8 +46,8 @@
                 <li><a href="/#/ubuntu">dockerfile/<strong class="text-success">ubuntu</strong></a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Projects</li>
-                <li ng-repeat="projectId in projectIds">
-                  <a href="/#/{{ projectId }}">dockerfile/<strong class="text-success">{{ projectId }}</strong></a>
+                <li ng-repeat="project in _.without(projects, 'ubuntu')">
+                  <a href="/#/{{ project.id }}">dockerfile/<strong class="text-success">{{ project.id }}</strong></a>
                 </li>
               </ul>
             </li>
@@ -65,7 +65,7 @@
           </ul>
           <ul class="list-group">
             <h4>Projects</h4>
-            <li class="list-group-item" ng-repeat="projectId in projectIds"><a href="/#/{{ projectId }}">{{ projectId }}</a></li>
+            <li class="list-group-item" ng-repeat="project in _.without(projects, 'ubuntu')"><a href="/#/{{ project.id }}">{{ project.id }}</a></li>
           </ul>
         </div>
         <div class="col-md-10" ui-view></div>

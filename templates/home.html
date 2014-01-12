@@ -7,12 +7,23 @@
 </div>
 
 <div class="well">
-  <span class="glyphicon glyphicon-thumbs-up"></span> All <strong>trusted builds</strong> published to the public <a href="https://index.docker.io/">Docker Registry</a> are automatically built from the projects hosted on Github, and they are kept in sync and protected by <a href="https://index.docker.io/">Docker Index</a>.
+  <span class="glyphicon glyphicon-ok"></span>&nbsp; All <strong>trusted builds</strong> published to the public <a href="https://index.docker.io/">Docker Registry</a> are automatically built from the projects hosted on Github, and they are kept in sync and protected by <a href="https://index.docker.io/">Docker Index</a>.
 </div>
 
 <div class="lead">
   <a href="http://www.docker.io/">Docker</a> is an open source project to pack, ship and run any application as a lightweight container, sponsored by <a href="http://www.docker.com/">Docker Inc.</a> under the <a href="https://github.com/dotcloud/docker/blob/master/LICENSE">apache 2.0 licence</a>.
 </div>
+
+<hr>
+
+<h4><span class="glyphicon glyphicon-thumbs-up"></span> Trusted Docker Builds</h4>
+
+<table class="table table-condensed table-hover">
+  <tr ng-repeat="project in projects">
+    <td><a href="/#/{{ project.id }}">dockerfile/<strong>{{ project.id }}</strong></a></td>
+    <td>{{ project.description }}</td>
+  </tr>
+</table>
 
 <hr>
 

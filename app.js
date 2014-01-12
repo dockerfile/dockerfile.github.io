@@ -63,14 +63,19 @@ angular.module('app', [
       }
     });
 }).run(function ($http, $rootScope) {
-  $rootScope.projectIds = [];
+  $rootScope._ = _;
+  $rootScope.projects = [];
 
   $http.get('https://api.github.com/users/dockerfile/repos').success(function (projects) {
-    _.pluck(projects, 'name').sort().forEach(function (projectId) {
-      if (!_.contains(['dockerfile.github.io', 'ubuntu'], projectId)) {
-        $rootScope.projectIds.push(projectId);
+    projects.forEach(function (project) {
+      if (!_.contains(['dockerfile.github.io'], project.name)) {
+        $rootScope.projects.push({
+          id: project.name,
+          description: project.description
+        });
       }
     });
+    $rootScope.projects.sort();
   });
 }).controller('HomeCtrl', function ($scope) {
 
