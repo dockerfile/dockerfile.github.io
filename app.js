@@ -62,21 +62,26 @@ angular.module('app', [
         }
       }
     });
-}).run(function ($http, $rootScope) {
+}).run(function ($http, $rootScope, $state) {
   $rootScope._ = _;
   $rootScope.projects = [];
 
-  $http.get('https://api.github.com/users/dockerfile/repos').success(function (projects) {
-    projects.forEach(function (project) {
-      if (!_.contains(['dockerfile.github.io'], project.name)) {
-        $rootScope.projects.push({
-          id: project.name,
-          description: project.description
-        });
-      }
+  $http.get('https://api.github.com/users/dockerfile/repos')
+    .success(function (projects) {
+      projects.forEach(function (project) {
+        if (!_.contains(['dockerfile.github.io'], project.name)) {
+          $rootScope.projects.push({
+            id: project.name,
+            description: project.description
+          });
+        }
+      });
+      $rootScope.projects.sort();
+    })
+    .error(function (err) {
+      alert(err.message);
+      $state.go('home');
     });
-    $rootScope.projects.sort();
-  });
 }).controller('HomeCtrl', function ($scope) {
 
 }).controller('ProjectCtrl', function ($sce, $scope, $stateParams, dockerfile, readme) {
