@@ -1,0 +1,24 @@
+<h1 class="text-center well">
+  docker pull <span class="text-danger">dockerfile/{{ projectId }}</span>
+</h1>
+
+<div class="text-center">
+  <a href="https://github.com/dockerfile/{{ projectId }}">
+    <span class="glyphicon glyphicon-star"></span>
+    GitHub Repository
+  </a>
+  &nbsp; | &nbsp;
+  <a href="https://index.docker.io/u/dockerfile/{{ projectId }}/">
+    <span class="glyphicon glyphicon-thumbs-up"></span>
+    Docker Index
+  </a>
+</div>
+
+<hr>
+
+<div ng-bind-html="readme"></div>
+
+<hr>
+
+<h2>Dockerfile used for this trusted build</h2>
+<pre ng-bind-html="dockerfile"></pre>
