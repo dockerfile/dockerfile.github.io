@@ -78,7 +78,6 @@ angular.module('app', [
           });
         }
       });
-      $rootScope.projects.sort();
     })
     .error(function (err) {
       alert(err.message);
