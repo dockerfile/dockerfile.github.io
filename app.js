@@ -70,7 +70,7 @@ angular.module('app', [
 
   $http.get('https://api.github.com/users/dockerfile/repos')
     .success(function (projects) {
-      projects.forEach(function (project) {
+      projects.sort().forEach(function (project) {
         if (!_.contains(['dockerfile.github.io'], project.name)) {
           $rootScope.projects.push({
             id: project.name,
