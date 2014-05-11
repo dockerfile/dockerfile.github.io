@@ -33,7 +33,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><strong>Dockerfile Project - Trusted Docker Builds</strong></a>
+          <a class="navbar-brand" href="#">
+            <span class="glyphicon glyphicon-thumbs-up"></span>
+            <strong>Dockerfile Project - Trusted Docker Builds</strong>
+          </a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -44,7 +47,7 @@
               <ul class="dropdown-menu">
                 <li class="dropdown-header">Projects</li>
                 <li ng-repeat="project in projects">
-                  <a href="/#/{{ project.id }}">dockerfile/<strong class="text-success">{{ project.id }}</strong></a>
+                  <a href="/#/{{ project.id }}">dockerfile/<strong class="text-success" ng->{{ project.id }}</strong></a>
                 </li>
               </ul>
             </li>
@@ -58,7 +61,9 @@
         <div class="col-md-2">
           <ul class="list-group">
             <h4>Projects</h4>
-            <li class="list-group-item" ng-repeat="project in projects"><a href="/#/{{ project.id }}">{{ project.id }}</a></li>
+            <li class="list-group-item" ng-repeat="project in projects">
+              <a href="/#/{{ project.id }}" ng-bind="project.id"></a>
+            </li>
           </ul>
         </div>
         <div class="col-md-10" ui-view></div>
