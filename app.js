@@ -1,7 +1,3 @@
-/*
- * app.js
- */
-
 marked.setOptions({
   gfm: true,
   tables: true,
@@ -84,7 +80,7 @@ angular.module('app', [
       $state.go('home');
     });
 }).controller('HomeCtrl', function ($scope) {
-
+  // ...
 }).controller('ProjectCtrl', function ($sce, $scope, $stateParams, dockerfile, readme) {
   $scope.projectId = $stateParams.projectId;
   $scope.dockerfile = $sce.trustAsHtml(dockerfile);
