@@ -3,24 +3,18 @@
 </div>
 
 <div class="lead">
-  <code>Dockerfile Project</code> maintains a central repository of <code>Dockerfile</code> for various popular open source software services runnable on a <a href="https://www.docker.com/">Docker</a> container. The goal of <code>Dockerfile Project</code> is to make it convenient for any developer to download pre-built <a href="https://www.docker.com/">Docker</a> images and rapidly develop, test, and deploy awesome applications.
+  <code>Dockerfile Project</code> maintained a central repository of <code>Dockerfile</code> for various popular open source software services runnable on a <a href="https://www.docker.com/">Docker</a> container. The goal of <code>Dockerfile Project</code> was to make it convenient for any developer to download pre-built <a href="https://www.docker.com/">Docker</a> images and rapidly develop, test, and deploy awesome applications.
 </div>
 
 <div class="well">
-  <span class="glyphicon glyphicon-ok"></span>&nbsp; All <strong>automated builds</strong> published to the public <a href="https://registry.hub.docker.com/">Docker Hub Registry</a> are automatically built directly from the repositories hosted on Github, and they are kept in sync and protected by <a href="https://registry.hub.docker.com/">Docker Hub Registry</a>.
+  <p><button type="button" class="btn btn-danger">Note</button>&nbsp; 
+  The dockerfile.github.io project has now been depreciated, and comparable Docker files and repositories are available on the <a href="https://registry.hub.docker.com/">Docker Hub Registry</a>.</p>
+
+  <p><br></p>
+
+  <p class="text-center">For further details, see <a href="http://blog.docker.com/2015/03/updates-available-to-popular-repos-update-your-images/">the list of supported replacements</a>, and  popular alternative repos.</p>
 </div>
 
 <div class="lead">
   <a href="https://www.docker.com/">Docker</a> is an open platform for developers and sysadmins to build, ship, and run distributed applications, sponsored by <a href="http://www.docker.com/">Docker, Inc.</a> under the <a href="https://github.com/dotcloud/docker/blob/master/LICENSE">apache 2.0 licence</a>.
 </div>
-
-<hr>
-
-<h4><span class="glyphicon glyphicon-thumbs-up"></span> Trusted Automated Docker Builds</h4>
-
-<table class="table table-condensed table-hover">
-  <tr ng-repeat="project in projects">
-    <td><a href="/#/{{ project.id }}">dockerfile/<strong>{{ project.id }}</strong></a></td>
-    <td>{{ project.description }}</td>
-  </tr>
-</table>
