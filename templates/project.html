@@ -2,14 +2,28 @@
   docker pull <span class="text-danger">dockerfile/{{ projectId }}</span>
 </h1>
 
+<div class="well" style="background-color: #fff0f0;">
+  <span class="glyphicon glyphicon-bullhorn"></span>&nbsp; {March 20, 2015} We are moving most images to the official or the community repos on <a href="https://registry.hub.docker.com/">Docker Hub Registry</a>. For further details, see the <a href="http://blog.docker.com/2015/03/updates-available-to-popular-repos-update-your-images/">list of supported replacements</a> on the official Docker blog.
+</div>
+
+<div class="text-center">
+  <a href="https://github.com/dockerfile/{{ projectId }}">
+    <span class="glyphicon glyphicon-star"></span>
+    GitHub Repository
+  </a>
+  &nbsp; | &nbsp;
+  <a href="https://registry.hub.docker.com/u/dockerfile/{{ projectId }}/">
+    <span class="glyphicon glyphicon-thumbs-up"></span>
+    Docker Hub Registry
+  </a>
+</div>
 
 <hr>
 
-<div class="well">
-  <p><button type="button" class="btn btn-danger">Note</button>&nbsp; 
-  The dockerfile.github.io project, including <span class="text-danger">dockerfile/{{ projectId }}</span> has now been depreciated as of April 2015, and comparable Docker files and repositories are available on the <a href="https://registry.hub.docker.com/">Docker Hub Registry</a>.</p>
+<div ng-bind-html="readme"></div>
 
-  <p><br></p>
+<hr>
 
-  <p class="text-center">For further details, see <a href="http://blog.docker.com/2015/03/updates-available-to-popular-repos-update-your-images/">the list of supported replacements</a>, and  popular alternative repos.</p>
-</div>
+<h2>Dockerfile used for this automated build</h2>
+
+<pre ng-bind-html="dockerfile"></pre>
